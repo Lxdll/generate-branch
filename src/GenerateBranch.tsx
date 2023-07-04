@@ -13,7 +13,6 @@ function GenerateBranch() {
     if (!ctx) return
     
     let iterations = 0
-    let frameCount = 0
     let generateBranchTasks: GenerateBranchTask[] = []
     let prevGenerateBranchTasks: GenerateBranchTask[] = []
 
@@ -55,9 +54,7 @@ function GenerateBranch() {
 
     const startAnimation = () => {
       requestAnimationFrame(() => {
-        frameCount += 1
-        if (frameCount % 3 === 0)
-          frame()
+        frame()
         startAnimation()
       })
     }
